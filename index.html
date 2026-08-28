@@ -27,7 +27,7 @@
   /* monochrome accent: white-on-dark, black-on-light (matches "New project" button) */
   --accent:#f4f4fa; --accent-contrast:#0d0d10; --accent-bg:rgba(244,244,250,.08); --accent-border:rgba(244,244,250,.35);
   --teal:var(--accent); --teal-bg:var(--accent-bg);
-  --green:var(--text2); --green-bg:var(--surface3);
+  --green:#4ade80; --green-bg:rgba(74,222,128,.14);
   --amber:#fbbf24; --amber-bg:rgba(251,191,36,.14); --amber-border:rgba(251,191,36,.35);
   --red:#f87171; --red-bg:rgba(248,113,113,.14); --red-border:rgba(248,113,113,.35);
   --r:12px; --r-lg:16px; --r-xl:20px;
@@ -40,6 +40,7 @@ body.light-theme{
   --border:#dcdce6; --border2:#e6e6ee;
   --text1:#15151d; --text2:#45455a; --text3:#6c6c82;
   --accent:#15151d; --accent-contrast:#ffffff; --accent-bg:rgba(21,21,29,.06); --accent-border:rgba(21,21,29,.28);
+  --green:#16a34a; --green-bg:rgba(22,163,74,.12);
   --amber-bg:rgba(180,83,9,.1); --amber-border:rgba(180,83,9,.3);
   --red-bg:rgba(220,38,38,.1); --red-border:rgba(220,38,38,.3);
   color-scheme:light;
@@ -81,12 +82,12 @@ body{margin:0;background:var(--bg);color:var(--text1);font-family:'Inter',sans-s
 .product-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-xl);margin-bottom:10px;overflow:hidden}
 .product-hdr{display:flex;align-items:center;gap:12px;padding:14px;cursor:pointer;user-select:none}
 .product-icon{width:42px;height:42px;border-radius:12px;flex-shrink:0;display:flex;align-items:center;justify-content:center;color:#fff}
-.product-icon svg{width:21px;height:21px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.product-icon svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .product-info{flex:1;min-width:0}
 .product-name{font-size:.9rem;font-weight:700;color:var(--text1);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .product-brand{font-size:.72rem;color:var(--text3);margin-top:1px}
-.product-status{flex-shrink:0;text-align:right}
-.status-badge{font-size:.64rem;font-weight:800;padding:3px 8px;border-radius:99px;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
+.product-status{flex-shrink:0;text-align:right;display:flex;flex-direction:column;align-items:flex-end}
+.status-badge{display:inline-block;align-self:flex-end;font-size:.64rem;font-weight:800;padding:3px 8px;border-radius:99px;text-transform:uppercase;letter-spacing:.03em;white-space:nowrap}
 .status-badge.active{background:var(--green-bg);color:var(--green)}
 .status-badge.soon{background:var(--amber-bg);color:var(--amber)}
 .status-badge.expired{background:var(--red-bg);color:var(--red)}
