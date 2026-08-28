@@ -111,6 +111,7 @@ body{margin:0;background:var(--bg);color:var(--text1);font-family:'Inter',sans-s
 .finput[type="date"]{position:relative}
 .date-icon-decor{position:absolute;right:12px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--text3);display:flex}
 .date-icon-decor svg{width:17px;height:17px}
+.date-placeholder-decor{position:absolute;left:12px;top:50%;transform:translateY(-50%);pointer-events:none;color:var(--text3);opacity:.7;font-size:.86rem;font-weight:600;display:flex}
 .finput[type="date"]::-webkit-calendar-picker-indicator{position:absolute;right:0;top:0;width:100%;height:100%;margin:0;padding:0;opacity:0;cursor:pointer}
 .finput[type="date"]::-webkit-date-and-time-value{text-align:left}
 .field-row2{display:flex;flex-direction:column;gap:0}
@@ -565,7 +566,8 @@ function render(){
             <div class="field">
               <label class="flabel">Purchase Date</label>
               <div class="finput-wrap">
-                <input class="finput" style="padding-right:38px" type="date" value="${escapeHtml(p.purchaseDate)}" oninput="updateProduct(${p.id},'purchaseDate',this.value)">
+                <input class="finput" style="padding-right:38px;color:${p.purchaseDate?'var(--text1)':'transparent'}" type="date" value="${escapeHtml(p.purchaseDate)}" oninput="updateProduct(${p.id},'purchaseDate',this.value);this.style.color=this.value?'var(--text1)':'transparent';this.closest('.finput-wrap').querySelector('.date-placeholder-decor').style.display=this.value?'none':'flex'">
+                <span class="date-placeholder-decor" style="display:${p.purchaseDate?'none':'flex'}">Tap to select date</span>
                 <span class="date-icon-decor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
               </div>
             </div>
